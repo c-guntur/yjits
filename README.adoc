@@ -1,0 +1,25 @@
+= Your Java Is Not The Same
+:figure-caption!:
+:toc:
+
+ifdef::env-github[]
+++++
+<p align="center">
+  <img width="300" src="assets/images/Duke_Wave_Dark.png">
+</p>
+++++
+endif::[]
+
+ifndef::env-github[]
+image::assets/images/Duke_Wave_Dark.png[Java Duke, 300, align=center]
+endif::[]
+
+
+'''
+
+[caption=" ", .center, cols="<40%, ^20%, >40%", width=95%, grid=none, frame=none]
+|===
+| &nbsp;
+| link:assets/docs/AboutUs.adoc[#About Us#]
+| link:assets/docs/HowToSetup.adoc[#How to set up the project#]
+|===

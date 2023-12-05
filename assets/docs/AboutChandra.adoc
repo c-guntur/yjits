@@ -1,0 +1,14 @@
+== About the speaker
+:figure-caption!:
+
+image::../images/CVG_Mugshot.png[Chandra Guntur, 150, 150, float="right", align="center"]
+
+|===
+2+^| *Chandra Guntur*
+2+^| *Java Champion*
+2+^| *JCP Executive Committee Rep. for BNY Mellon*
+2+^| *JUG Leader* link:https://twitter.com/nyjavasig[@NYJavaSIG] and link:https://twitter.com/GardenStateJUG[@GardenStateJUG]
+2+^| *Website*: https://cguntur.me
+2+^| *Github*: https://github.com/c-guntur
+2+^| *X/Twitter*: https://twitter.com/cguntur[@CGuntur]
+|===
