@@ -28,9 +28,8 @@ public class App {
      * <p>
      * NOTE: This method covers the usage of 'var' in Java
      *
-     * @param args Command line arguments (not used in this instance)
      */
-    public static void main(String[] args) {
+    void main() {
         //FIX ME: 5. Uncomment/Comment below code.
         //showNullPointerException();
 
