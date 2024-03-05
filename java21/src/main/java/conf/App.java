@@ -23,11 +23,11 @@ public class App {
     //FIX ME: 0. Replace redundant boxing
     public static final Integer ZERO_INTEGER = 0;
 
+    //FIX ME: 12. Java 21 benefit
     /**
      * Orchestrates the conference creation, logistics and awards.
      * <p>
      * NOTE: This method covers the usage of 'var' in Java
-     *
      */
     void main() {
         //FIX ME: 5. Uncomment/Comment below code.
@@ -47,7 +47,7 @@ public class App {
         var shirtCountMap = determineShirtCount(theConference);
         displayShirtCounts(shirtCountMap);
 
-        //FIX ME: 1. Use var instead with null assignment
+        //FIX ME: 1. Use var instead
         var hatCountMap = determineHatCount(theConference);
 
         displayHatCounts(hatCountMap);
@@ -58,7 +58,7 @@ public class App {
 
         displayRaffleWinners(theConference);
 
-        displayMostVotedSession(theConference);
+        displayRandomWinningSession(theConference);
     }
 
     /**
@@ -94,7 +94,7 @@ public class App {
         | %-50s\{Staff.class.getSimpleName()} | %6d\{theConference.getStaff().size()} |
         | %-50s\{VendorSponsor.class.getSimpleName()} | %6d\{theConference.getVendorSponsors().size()} |
         ===============================================================
-        | Total allowed people:})                            | %6d\{determineBadgeCount(theConference)} |
+        | Total allowed people:                              | %6d\{determineBadgeCount(theConference)} |
         ---------------------------------------------------------------
         """;
 
@@ -276,7 +276,7 @@ public class App {
      *
      * @param theConference - the current conference
      */
-    static void displayMostVotedSession(Conference theConference) {
+    static void displayRandomWinningSession(Conference theConference) {
         //FIX ME: 6. Replace to a Record getter and
         //          upgrade to a toList() instead of Collectors.toList()
         List<String> sessions = theConference.getSessions().stream().

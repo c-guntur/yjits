@@ -25,6 +25,7 @@ public class App {
     //FIXME: 0. Replace redundant boxing
     public static final Integer ZERO_INTEGER = new Integer(0);
 
+    //FIXME: 12. Java 21 benefit
     /**
      * Orchestrates the conference creation, logistics and awards.
      * <p>
@@ -50,7 +51,7 @@ public class App {
         Map<String, Integer> shirtCountMap = determineShirtCount(theConference);
         displayShirtCounts(shirtCountMap);
 
-        //FIXME: 1. Use var instead with null assignment
+        //FIXME: 1. Use var instead
         Map<String, Integer> hatCountMap = null;
         hatCountMap = determineHatCount(theConference);
         displayHatCounts(hatCountMap);
@@ -61,7 +62,7 @@ public class App {
 
         displayRaffleWinners(theConference);
 
-        displayMostVotedSession(theConference);
+        displayRandomWinningSession(theConference);
     }
 
     /**
@@ -295,7 +296,7 @@ public class App {
      *   change for Record instances.
      * @param theConference - the current conference
      */
-    static void displayMostVotedSession(Conference theConference) {
+    static void displayRandomWinningSession(Conference theConference) {
         //FIXME: 6. Replace to a Record getter and
         //          upgrade to a toList() instead of Collectors.toList()
         List<String> sessions = theConference.getSessions().stream().
