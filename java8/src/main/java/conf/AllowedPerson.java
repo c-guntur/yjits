@@ -52,6 +52,7 @@ public class AllowedPerson {
     }
 }
 
+//NOTE: Possible to have an "Alumnus" subclass of Attendee
 class Attendee extends AllowedPerson {
     private PaymentType paymentType;
     private final String uniqueId = UUID.randomUUID().toString();
@@ -83,6 +84,13 @@ class Attendee extends AllowedPerson {
     }
 }
 
+final class Alumnus extends Attendee {
+    public Alumnus(String firstName, String lastName, PaymentType paymentType) {
+        super(firstName, lastName, paymentType);
+    }
+}
+
+//NOTE: No extensions allowed for Speaker
 class Speaker extends AllowedPerson {
     private String shirtSize;
     private final String uniqueId = UUID.randomUUID().toString();
@@ -114,6 +122,7 @@ class Speaker extends AllowedPerson {
     }
 }
 
+//NOTE: Staff can possibly be further extended into Admin, FrontDesk, Security and many more
 class Staff extends AllowedPerson {
     private String hatSize;
 
@@ -140,6 +149,7 @@ class Staff extends AllowedPerson {
     }
 }
 
+//NOTE: No extensions allowed for VendorSponsor
 class VendorSponsor extends AllowedPerson {
     private String boothName;
     private final String uniqueId = UUID.randomUUID().toString();

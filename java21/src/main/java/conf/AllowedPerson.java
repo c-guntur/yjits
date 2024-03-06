@@ -52,7 +52,8 @@ public sealed class AllowedPerson permits Attendee, Speaker, Staff, VendorSponso
     }
 }
 
-final class Attendee extends AllowedPerson {
+//NOTE: Possible to have an "Alumnus" subclass of Attendee
+sealed class Attendee extends AllowedPerson permits Alumnus {
     private PaymentType paymentType;
     private final String uniqueId = UUID.randomUUID().toString();
 
@@ -83,7 +84,14 @@ final class Attendee extends AllowedPerson {
     }
 }
 
-non-sealed class Speaker extends AllowedPerson {
+final class Alumnus extends Attendee {
+    public Alumnus(String firstName, String lastName, PaymentType paymentType) {
+        super(firstName, lastName, paymentType);
+    }
+}
+
+//NOTE: No extensions allowed for Speaker
+final class Speaker extends AllowedPerson {
     private String shirtSize;
     private final String uniqueId = UUID.randomUUID().toString();
 
@@ -114,7 +122,8 @@ non-sealed class Speaker extends AllowedPerson {
     }
 }
 
-final class Staff extends AllowedPerson {
+//NOTE: Staff can possibly be further extended into Admin, FrontDesk, Security and many more
+non-sealed class Staff extends AllowedPerson {
     private String hatSize;
 
     public Staff(String firstName, String lastName, String hatSize) {
@@ -140,6 +149,7 @@ final class Staff extends AllowedPerson {
     }
 }
 
+//NOTE: No extensions allowed for VendorSponsor
 final class VendorSponsor extends AllowedPerson {
     private String boothName;
     private final String uniqueId = UUID.randomUUID().toString();
