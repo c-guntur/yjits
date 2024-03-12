@@ -11,6 +11,20 @@
 == Initial setup
 . Launch the project in the IDE (can be configured as a maven project, pointing to the root pom.xml, and the toolchains.xml for JDKs used)
 
+=== Conference
+ifdef::env-github[]
+++++
+<p align="center">
+  <img width="800" src="../images/conference.png">
+</p>
+++++
+endif::[]
+
+ifndef::env-github[]
+image::../images/conference.png[Conference, 800, align=center]
+endif::[]
+
+
 === Test Java 8 code:
 
 . Verify that the module *java8* uses *JDK 8* (note, do not rely on source/target compatibility in the IDE force set the module to use JDK 8).
