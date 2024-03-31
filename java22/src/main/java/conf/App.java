@@ -23,7 +23,7 @@ public class App {
     //FIX ME: 0. Replace redundant boxing
     public static final Integer ZERO_INTEGER = 0;
 
-    //FIX ME: 12. Java 21 benefit
+    //FIX ME: 11. Java 21 benefit
     /**
      * Orchestrates the conference creation, logistics and awards.
      * <p>
@@ -83,7 +83,7 @@ public class App {
      */
     static void displayBadgeCount(Conference theConference) {
 
-        //FIX ME: 11. Convert to String Template FMT
+        //FIX ME: 10. Convert to String Template FMT
         //NOTE: FMT is a StringTemplate processor that allows String formatting.
         String message = FMT."""
         ---------------------------------------------------------------
@@ -131,7 +131,7 @@ public class App {
 
             int count = shirtCountMap.get(shirtSize);
 
-            //FIX ME: 9. Convert to String Template STR
+            //FIX ME: 8. Convert to String Template STR
             //NOTE: STR is the most basic StringTemplate processor.
             String shirtSizes =
                     STR. "Shirt size: [\{ shirtSize }] -> Count: [\{ count }]" ;
@@ -167,7 +167,7 @@ public class App {
                 hatCountMap.values().stream().reduce(0, Integer::sum));
 
         for (String hatSize : hatCountMap.keySet()) {
-            //FIX ME: 10. Convert to String Template RAW
+            //FIX ME: 9. Convert to String Template RAW
             //NOTE: RAW is a StringTemplate processor that can defer 'process'ing.
             StringTemplate message = RAW."Hat size: [\{hatSize}] -> Count: [\{hatCountMap.get(hatSize)}]";
             System.out.println(STR.process(message));
@@ -277,7 +277,7 @@ public class App {
      * @param theConference - the current conference
      */
     static void displayRandomWinningSession(Conference theConference) {
-        //FIX ME: 6. Replace to a Record getter and
+        //FIX ME: 5. Replace to a Record getter and
         //          upgrade to a toList() instead of Collectors.toList()
         List<String> sessions = theConference.getSessions().stream().
                 map(Session::sessionTitle).toList();
@@ -285,7 +285,7 @@ public class App {
         String mostVotedSessionTitle = sessions.get(
                 ThreadLocalRandom.current().nextInt(0, sessions.size()));
 
-        //FIX ME: 6. Replace to a Record getter
+        //FIX ME: 5. Replace to a Record getter
         Optional<Session> sessionObject = theConference.getSessions().stream()
                 .filter(session -> session.sessionTitle().equals(mostVotedSessionTitle))
                 .findFirst();
@@ -304,7 +304,7 @@ public class App {
      *               Session instance
      */
     static void displaySessionDetails(Object object) {
-        //FIX ME: 8. Use a record pattern
+        //FIX ME: 7. Use a record pattern
         if (object instanceof Session(String title, String _, Speaker speaker)) {
             String message = STR. "\nThe most voted session: [\{ title }] by [\{ speaker.firstName } \{ speaker.lastName }]" ;
             System.out.println(message);
@@ -325,7 +325,7 @@ public class App {
         Session session = new Session("fake", "fake", new Speaker(null, "fake", "fake"));
         Set<Session> sessions = Set.of(session);
         fakeConference.setSessions(sessions);
-        //FIX ME: 6. Replace to a Record getter
+        //FIX ME: 5. Replace to a Record getter
         Object aSpeakerFirstNameLength =
                 ((Session) fakeConference.getSessions().
                         toArray()[0]).mainSpeakerModerator().firstName.length();

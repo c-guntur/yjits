@@ -14,7 +14,7 @@ import java.util.UUID;
  * <p>
  * NOTE: This class hierarchy shows the usage of sealed classes
  */
-//FIX ME: 7. Convert to Sealed type
+//FIX ME: 6. Convert to Sealed type
 public sealed class AllowedPerson permits Attendee, Speaker, Staff, VendorSponsor {
     protected String firstName;
     protected String lastName;
@@ -181,7 +181,7 @@ final class VendorSponsor extends AllowedPerson {
     }
 }
 
-//FIX ME: 7. Show as not allowed in sealed hierarchy
+//FIX ME: 6. Show as not allowed in sealed hierarchy
 //class InvalidAttendee extends AllowedPerson {
 //    public InvalidAttendee(String firstName, String lastName) {
 //        super(firstName, lastName);

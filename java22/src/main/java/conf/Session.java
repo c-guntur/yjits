@@ -11,6 +11,6 @@ package conf;
  * NOTE: This example highlights the usage of a record to replace the
  *       boilerplate of a plain Java class.
  */
-//FIX ME: 6. Convert to record
+//FIX ME: 5. Convert to record
 public record Session(String sessionTitle, String sessionAbstract, Speaker mainSpeakerModerator) {
 }

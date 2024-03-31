@@ -25,7 +25,7 @@ public class App {
     //FIXME: 0. Replace redundant boxing
     public static final Integer ZERO_INTEGER = new Integer(0);
 
-    //FIXME: 12. Java 21 benefit
+    //FIXME: 11. Java 21 benefit
     /**
      * Orchestrates the conference creation, logistics and awards.
      * <p>
@@ -34,7 +34,7 @@ public class App {
      * @param args Command line arguments (not used in this instance)
      */
     public static void main(String[] args) {
-        //FIXME: 5. Uncomment/Comment below code.
+        //FIXME: 0. Uncomment/Comment below code.
         //showNullPointerException();
 
         Conference theConference = new Seeder().seed();
@@ -86,7 +86,7 @@ public class App {
      * @param theConference - the current conference
      */
     static void displayBadgeCount(Conference theConference) {
-        //FIXME: 11. Convert to String Template FMT
+        //FIXME: 10. Convert to String Template FMT
         //NOTE: FMT is a StringTemplate processor that allows String formatting.
         StringBuffer message = new StringBuffer("");
         message.append("\n---------------------------------------------------------------");
@@ -134,7 +134,7 @@ public class App {
 
             int count = shirtCountMap.get(shirtSize);
 
-            //FIXME: 9. Convert to String Template STR
+            //FIXME: 8. Convert to String Template STR
             //NOTE: STR is the most basic StringTemplate processor.
             String shirtSizes = "Shirt size: [" + shirtSize + "] " +
                     "-> Count: [" + count + "]";
@@ -170,7 +170,7 @@ public class App {
                 hatCountMap.values().stream().reduce(0, Integer::sum));
 
         for (String hatSize : hatCountMap.keySet()) {
-            //FIXME: 10. Convert to String Template RAW
+            //FIXME: 9. Convert to String Template RAW
             //NOTE: RAW is a StringTemplate processor that can defer 'process'ing.
             System.out.println("Hat size: [" + hatSize + "] " +
                     "-> Count: [" + hatCountMap.get(hatSize) + "]");
@@ -297,15 +297,14 @@ public class App {
      * @param theConference - the current conference
      */
     static void displayRandomWinningSession(Conference theConference) {
-        //FIXME: 6. Replace to a Record getter and
-        //          upgrade to a toList() instead of Collectors.toList()
+        //FIXME: 5b. Replace to a Record getter + upgrade to a toList() instead of Collectors.toList()
         List<String> sessions = theConference.getSessions().stream().
                 map(Session::getSessionTitle).collect(Collectors.toList());
 
         String mostVotedSessionTitle = sessions.get(
                 ThreadLocalRandom.current().nextInt(0, sessions.size()));
 
-        //FIXME: 6. Replace to a Record getter
+        //FIXME: 5c. Replace to a Record getter
         Optional<Session> sessionObject = theConference.getSessions().stream()
                 .filter(session -> session.getSessionTitle().equals(mostVotedSessionTitle))
                 .findFirst();
@@ -325,7 +324,7 @@ public class App {
      */
     static void displaySessionDetails(Object object) {
 
-        //FIXME: 8. Use a record pattern
+        //FIXME: 7. Use a record pattern
         if (object instanceof Session) {
             Session session = (Session) object;
 
@@ -359,7 +358,7 @@ public class App {
         Set<Session> sessions = new HashSet<>();
         sessions.add(session);
         fakeConference.setSessions(sessions);
-        //FIXME: 6. Replace to a Record getter
+        //FIXME: 5d. Replace to a Record getter
         Object aSpeakerFirstNameLength =
                 ((Session) fakeConference.getSessions().
                         toArray()[0]).getMainSpeakerModerator().firstName.length();
