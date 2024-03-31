@@ -4,14 +4,15 @@
 | | |____live_templates.zip
 | |____images
 | | |____HelpfulNPE.png
+| | |____conference.png
 | | |____RG_Mugshot.jpg
 | | |____CVG_Mugshot.png
 | | |____Duke_Wave_Dark.png
 | |____docs
-| | |____AboutChandra.adoc
 | | |____HelpfulNPE.adoc
 | | |____HowToSetup.adoc
-|____java21
+| | |____AboutUs.adoc
+|____java22
 | |____pom.xml
 | |____src
 | | |____main
