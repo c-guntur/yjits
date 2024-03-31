@@ -1,4 +1,7 @@
-= Your Java Is Not The Same
+= void main()
+
+== Your Java Isn't The Same !
+
 :figure-caption!:
 :toc:
 

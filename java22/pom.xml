@@ -6,17 +6,17 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>conf</groupId>
-    <artifactId>java21</artifactId>
+    <artifactId>java22</artifactId>
     <version>1.0.0</version>
 
-    <name>java21</name>
+    <name>java22</name>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <!-- FIX ME 0. Change to the Java 21 -->
-        <maven.compiler.source>21</maven.compiler.source>
-        <!-- FIX ME 0. Change to the Java 21 -->
-        <maven.compiler.target>21</maven.compiler.target>
+        <!-- FIX ME 0. Change to the Java 22 -->
+        <maven.compiler.source>22</maven.compiler.source>
+        <!-- FIX ME 0. Change to the Java 22 -->
+        <maven.compiler.target>22</maven.compiler.target>
     </properties>
 
     <dependencies>
@@ -40,7 +40,7 @@
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter</artifactId>
-            <version>5.9.2</version>
+            <version>5.10.1</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
@@ -53,10 +53,10 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.11.0</version>
                 <configuration>
-                    <!-- FIX ME 0. Change to the Java 21 -->
+                    <!-- FIX ME 0. Change to the Java 22 -->
                     <source>21</source>
-                    <!-- FIX ME 0. Change to the Java 21 -->
-                    <target>21</target>
+                    <!-- FIX ME 0. Change to the Java 22 -->
+                    <target>22</target>
                     <compilerArgs>--enable-preview</compilerArgs>
                 </configuration>
             </plugin>
@@ -75,8 +75,8 @@
                         <configuration>
                             <toolchains>
                                 <jdk>
-                                    <!-- FIX ME 0. Change to the Java 21 -->
-                                    <version>21</version>
+                                    <!-- FIX ME 0. Change to the Java 22 -->
+                                    <version>22</version>
                                 </jdk>
                             </toolchains>
                         </configuration>
@@ -87,8 +87,8 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
-                    <source>21</source>
-                    <target>21</target>
+                    <source>22</source>
+                    <target>22</target>
                     <compilerArgs>--enable-preview</compilerArgs>
                 </configuration>
             </plugin>

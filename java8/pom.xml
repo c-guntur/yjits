@@ -13,9 +13,9 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <!-- FIXME 0. Change to the Java 21 -->
+        <!-- FIXME 0. Change to the Java 22 -->
         <maven.compiler.source>8</maven.compiler.source>
-        <!-- FIXME 0. Change to the Java 21 -->
+        <!-- FIXME 0. Change to the Java 22 -->
         <maven.compiler.target>8</maven.compiler.target>
     </properties>
 
@@ -53,7 +53,7 @@
                     <artifactId>maven-compiler-plugin</artifactId>
                     <version>3.11.0</version>
                     <configuration>
-                        <!-- FIXME 0. Change to the Java 21 and uncomment an enable-preview compilerArgs-->
+                        <!-- FIXME 0. Change to the Java 22 and uncomment an enable-preview compilerArgs-->
                         <source>8</source>
                         <target>8</target>
 <!--                        <compilerArgs>&#45;&#45;enable-preview</compilerArgs>-->
