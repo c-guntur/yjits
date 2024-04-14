@@ -15,6 +15,9 @@ import static java.lang.StringTemplate.RAW;
 import static java.util.FormatProcessor.FMT;
 
 public class App {
+    //TODO: Add an example of a "switch statement with arrow syntax"
+    //TODO: Add an example of a "when clause" in a switch statement
+    //TODO: Add an example of "null pattern matching" in a switch block
 
     /**
      * NOTE: Future versions of Java will auto-box primitives.
@@ -303,6 +306,10 @@ public class App {
      * @param object An object that is intended to be a
      *               Session instance
      */
+    //TODO: Show a nested deconstruction of a record:
+    //  1. Convert AllowedPerson to be a sealed interface
+    //  2. Make Speaker a record type
+    //  3. Deconstruct Speaker and print "Congrats speaker.firstName!!!"
     static void displaySessionDetails(Object object) {
         //FIX ME: 7. Use a record pattern
         if (object instanceof Session(String title, String _, Speaker speaker)) {

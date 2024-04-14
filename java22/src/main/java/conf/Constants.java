@@ -15,6 +15,8 @@ public class Constants {
      * It uses a set of three single quotes and indentation begins
      * from the first line after the triple-quote.
      */
+    //TODO: Add an interpolation variable - conference name?
+    //TODO: Add an escape character sequence to showcase String escaping
     //FIX ME: 3a. Replace with a text block
     public static final String ATTENDEE_EMAIL =
             """
