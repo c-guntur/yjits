@@ -56,6 +56,8 @@ public class App {
         hatCountMap = determineHatCount(theConference);
         displayHatCounts(hatCountMap);
 
+        calculateConferenceDiscount(theConference, Math.random());
+
         displayPaymentInvoicing(theConference);
 
         displayBadgeCount(theConference);
@@ -178,6 +180,26 @@ public class App {
     }
 
     /**
+     * Calculate the discount that each attendee receives.
+     * @param theConference
+     * @param discount
+     */
+     static void calculateConferenceDiscount(Conference theConference, double discount) {
+
+         //FIXME: 12. Replace with switch for primitives
+         if (discount <= 0.1) {
+             System.out.println("\nYou get yourself a discount");
+         } else if (discount <= 0.2) {
+             System.out.println("\nLuck you, that's a nice discount");
+         } else {
+             System.out.println("\nToday should be your lucky day");
+         }
+
+         System.out.printf("%s attendees will receive a [%s%%] discount%n", String.format("%d", theConference.getAttendees().size()), String.format("%,.2f", discount * 100));
+     }
+
+
+    /**
      * Calculate total processing fee based on individual payment types
      * Each payment type has different processing fee. The sum total of all
      * processing fee is calculated and displayed.
@@ -188,6 +210,9 @@ public class App {
         double processingFee = 0.0D;
         for (Attendee attendee : theConference.getAttendees()) {
             //FIXME: 2. Replace with switch expression
+            if(attendee.getPaymentType() == null){
+                return;
+            }
             switch (attendee.getPaymentType()) {
                 case AMEX:
                     processingFee += 0.10D;

@@ -15,9 +15,6 @@ import static java.lang.StringTemplate.RAW;
 import static java.util.FormatProcessor.FMT;
 
 public class App {
-    //TODO: Add an example of a "switch statement with arrow syntax"
-    //TODO: Add an example of a "when clause" in a switch statement
-    //TODO: Add an example of "null pattern matching" in a switch block
 
     /**
      * NOTE: Future versions of Java will auto-box primitives.
@@ -54,6 +51,8 @@ public class App {
         var hatCountMap = determineHatCount(theConference);
 
         displayHatCounts(hatCountMap);
+
+        calculateConferenceDiscount(theConference, Math.random());
 
         displayPaymentInvoicing(theConference);
 
@@ -178,6 +177,23 @@ public class App {
     }
 
     /**
+     * Calculate the discount that each attendee receives.
+     * @param theConference
+     * @param discount
+     */
+    static void calculateConferenceDiscount(Conference theConference, double discount) {
+
+        switch (discount){
+            case double d when d <= 0.1 -> System.out.println("You get yourself a discount");
+            case double d when d <= 0.2 -> System.out.println("Luck you, that's a nice discount");
+            default -> System.out.println("Today should be your lucky day");
+        }
+
+        System.out.printf("%s attendees will receive a [%s%%] discount%n", String.format("%d", theConference.getAttendees().size()), String.format("%,.2f", discount * 100));
+
+    }
+
+    /**
      * Calculate total processing fee based on individual payment types
      * Each payment type has different processing fee. The sum total of all
      * processing fee is calculated and displayed.
@@ -189,6 +205,7 @@ public class App {
         for (Attendee attendee : theConference.getAttendees()) {
             // FIX ME: 2. Replace with switch expression
             processingFee += switch (attendee.getPaymentType()) {
+                case null -> 0D;
                 case AMEX -> 0.10D;
                 case VISA, MASTERCARD -> 0.08D;
                 case PAYPAL -> 0.11D;
