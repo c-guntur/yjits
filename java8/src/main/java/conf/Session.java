@@ -11,7 +11,7 @@ package conf;
  * NOTE: This example highlights the usage of a record to replace the
  *       boilerplate of a plain Java class.
  */
-//FIXME: 5a. Convert to record
+//FIXME_9_: Convert to record
 public class Session {
     private final String sessionTitle;
     private final String sessionAbstract;

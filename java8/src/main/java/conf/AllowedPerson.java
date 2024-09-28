@@ -8,13 +8,13 @@ import java.util.UUID;
  * "open" which implied infinite extensions, such as InvalidAttendee
  * here. With the more modern "sealed" classes it is possible to
  * create a more controlled and finite hierarchy for extensions.
- * In this example, Attendee, Speaker, Staff and VendorSponsor are
- * all allowed extensions, while InvalidAttendee needs to be
- * commented out.
+ * In this example, Alumnus, Attendee, Speaker, Staff and
+ * VendorSponsor are all allowed extensions, while
+ * InvalidAttendee needs to be commented out.
  * <p>
  * NOTE: This class hierarchy shows the usage of sealed classes
  */
-//FIXME: 6. Convert to Sealed type
+//FIXME_8_: Convert to Sealed type
 public class AllowedPerson {
     protected String firstName;
     protected String lastName;
@@ -59,6 +59,10 @@ class Attendee extends AllowedPerson {
 
     public Attendee(String firstName, String lastName, PaymentType paymentType) {
         super(firstName, lastName);
+        //FIXME_12_: Allow safe statements before super()
+        if(paymentType == null) {
+            throw new IllegalArgumentException("Invalid Payment type");
+        }
         this.paymentType = paymentType;
     }
 
@@ -181,7 +185,7 @@ class VendorSponsor extends AllowedPerson {
     }
 }
 
-//FIXME: 6. Show as not allowed in sealed hierarchy
+//FIXME_8_: Show as not allowed in sealed hierarchy
 class InvalidAttendee extends AllowedPerson {
     public InvalidAttendee(String firstName, String lastName) {
         super(firstName, lastName);

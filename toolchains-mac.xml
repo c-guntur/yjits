@@ -13,10 +13,10 @@
     <toolchain>
         <type>jdk</type>
         <provides>
-            <version>22</version>
+            <version>23</version>
         </provides>
         <configuration>
-            <jdkHome>/Library/Java/JavaVirtualMachines/jdk-22.jdk/Contents/Home/</jdkHome>
+            <jdkHome>/Library/Java/JavaVirtualMachines/jdk-23.jdk/Contents/Home/</jdkHome>
         </configuration>
     </toolchain>
 </toolchains>

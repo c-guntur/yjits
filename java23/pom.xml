@@ -6,17 +6,21 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>conf</groupId>
-    <artifactId>java22</artifactId>
+    <artifactId>java23</artifactId>
     <version>1.0.0</version>
 
-    <name>java22</name>
+    <name>java23</name>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <!-- FIX ME 0. Change to the Java 22 -->
-        <maven.compiler.source>22</maven.compiler.source>
-        <!-- FIX ME 0. Change to the Java 22 -->
-        <maven.compiler.target>22</maven.compiler.target>
+        <!-- FIXED 0: Change to the Java 23 -->
+        <maven.compiler.source>23</maven.compiler.source>
+        <!-- FIXED 0: Change to the Java 23 -->
+        <maven.compiler.target>23</maven.compiler.target>
+
+        <!-- NOTE: Either use both above or simply use maven.compiler.release -->
+        <!--   available since Java 9 -->
+<!--        <maven.compiler.release>23</maven.compiler.release>-->
     </properties>
 
     <dependencies>
@@ -51,12 +55,12 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.11.0</version>
+                <version>3.13.0</version>
                 <configuration>
-                    <!-- FIX ME 0. Change to the Java 22 -->
-                    <source>21</source>
-                    <!-- FIX ME 0. Change to the Java 22 -->
-                    <target>22</target>
+                    <!-- FIXED 0: Change to the Java 23 and -->
+                    <!--        uncomment an enable-preview compilerArgs-->
+                    <source>23</source>
+                    <target>23</target>
                     <compilerArgs>--enable-preview</compilerArgs>
                 </configuration>
             </plugin>
@@ -75,8 +79,8 @@
                         <configuration>
                             <toolchains>
                                 <jdk>
-                                    <!-- FIX ME 0. Change to the Java 22 -->
-                                    <version>22</version>
+                                    <!-- FIXED 0: Change to the Java 23 -->
+                                    <version>23</version>
                                 </jdk>
                             </toolchains>
                         </configuration>
@@ -87,8 +91,10 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
-                    <source>22</source>
-                    <target>22</target>
+                    <!-- FIXED 0: Change to the Java 23 and -->
+                    <!--        uncomment an enable-preview compilerArgs-->
+                    <source>23</source>
+                    <target>23</target>
                     <compilerArgs>--enable-preview</compilerArgs>
                 </configuration>
             </plugin>

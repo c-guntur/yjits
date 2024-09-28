@@ -15,15 +15,15 @@ public class Constants {
      * It uses a set of three single quotes and indentation begins
      * from the first line after the triple-quote.
      */
-    //FIXME: 3a. Replace with a text block
+    //FIXME_4_: Java Text blocks: a simple example
     public static final String ATTENDEE_EMAIL =
-            "Welcome to this year's conference! " + "We're excited you are attending!!!" +
+            "Welcome to this year's ! " + "We're excited you are attending!!!" +
             "\nHere is a list of things to know:" +
             "\n\tSchedule is located at: https://marsdev.io/schedule" +
             "\n\tSpeakers can be viewed at: https://marsdev.io/speakers" +
             "\n\tOther activities and raffle details are available at: https://mardev.io/foryou" +
             "\n\tCode of conduct: https://marsdev.io/code-of-conduct" +
-            "\nWe really look forward to seeing you here and hope you get to both learn as well as enjoy our conference!";
+            "\nWe really look forward to seeing you \"here\" and hope you get to both learn as well as enjoy our conference!";
 
     /**
      * The below text is not easy to copy/paste or modify, given the
@@ -32,7 +32,7 @@ public class Constants {
      * It uses a set of three single quotes and indentation begins
      * from the first line after the triple-quote.
      */
-    //FIXME: 3b. Replace with indentation-based text block
+    //FIXME_4_: Java Text blocks: an indentation-based text block
     public static final String SPEAKER_EMAIL =
             "\tWelcome to this year's conference! " +
             "\tWe're grateful you are speaking!!! " +

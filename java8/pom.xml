@@ -13,10 +13,14 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <!-- FIXME 0. Change to the Java 22 -->
+        <!-- FIXME_0_: Change to the Java 23 -->
         <maven.compiler.source>8</maven.compiler.source>
-        <!-- FIXME 0. Change to the Java 22 -->
+        <!-- FIXME_0_: Change to the Java 23 -->
         <maven.compiler.target>8</maven.compiler.target>
+
+        <!-- NOTE: Either use both above or simply use maven.compiler.release -->
+        <!--   available since Java 9 -->
+        <!--        <maven.compiler.release>23</maven.compiler.release>-->
     </properties>
 
     <dependencies>
@@ -53,7 +57,8 @@
                     <artifactId>maven-compiler-plugin</artifactId>
                     <version>3.11.0</version>
                     <configuration>
-                        <!-- FIXME 0. Change to the Java 22 and uncomment an enable-preview compilerArgs-->
+                        <!-- FIXME_0_: Change to the Java 23 and -->
+                        <!--        uncomment an enable-preview compilerArgs-->
                         <source>8</source>
                         <target>8</target>
 <!--                        <compilerArgs>&#45;&#45;enable-preview</compilerArgs>-->
@@ -74,12 +79,24 @@
                         <configuration>
                             <toolchains>
                                 <jdk>
+                                    <!-- FIXME_0_: Change to the Java 23 -->
                                     <version>8</version>
                                 </jdk>
                             </toolchains>
                         </configuration>
                     </execution>
                 </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <!-- FIXME_0_: Change to the Java 23 and -->
+                    <!--        uncomment an enable-preview compilerArgs-->
+                    <source>8</source>
+                    <target>8</target>
+<!--                    <compilerArgs>&#45;&#45;enable-preview</compilerArgs>-->
+                </configuration>
             </plugin>
         </plugins>
     </build>

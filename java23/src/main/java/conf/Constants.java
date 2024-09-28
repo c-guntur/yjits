@@ -16,8 +16,7 @@ public class Constants {
      * from the first line after the triple-quote.
      */
     //TODO: Add an interpolation variable - conference name?
-    //TODO: Add an escape character sequence to showcase String escaping
-    //FIX ME: 3a. Replace with a text block
+    //FIXED 4: Replace with a text block
     public static final String ATTENDEE_EMAIL =
             """
             Welcome to this year's conference! We're excited you are attending!!!
@@ -26,7 +25,7 @@ public class Constants {
                 Speakers can be viewed at: https://marsdev.io/speakers
                 Other activities and raffle details are available at: https://mardev.io/foryou
                 Code of conduct: https://marsdev.io/code-of-conduct
-            We really look forward to seeing you here and hope you get to both learn as well as enjoy our conference!
+            We really look forward to seeing you "here" and hope you get to both learn as well as enjoy our conference!
             """;
 
     /**
@@ -36,7 +35,7 @@ public class Constants {
      * It uses a set of three single quotes and indentation begins
      * from the first line after the triple-quote.
      */
-    //FIX ME: 3b. Replace with indentation-based text block
+    //FIXED 4: Replace with indentation-based text block
     public static final String SPEAKER_EMAIL =
             """
                         Welcome to this year's conference! We're grateful you are speaking!!!
