@@ -32,7 +32,7 @@ public class App {
     //FIXME_11_: Java 21 benefit
     public static void main(String[] args) {
         //FIXME_2_: Uncomment to see Helpful NullPointerExceptions - (comment out after).
-        showNullPointerException();
+        //showNullPointerException();
 
         Conference theConference = new Seeder().seed();
 
