@@ -1,30 +1,30 @@
 The Agenda:
 
-📌 FIXME_0_: Fix the Java versions in the Apache Maven POM
+📌 FIXME 0: Fix the Java versions in the Apache Maven POM
 
-📌 FIXME_1_: Redundant boxing of primitives
+📌 FIXME 1: Redundant boxing of primitives
 
-📌 FIXME_2_: The new helpful NullPointerException
+📌 FIXME 2: The new helpful NullPointerException
 
-📌 FIXME_3_: Local Variable Type Inference - Use var
+📌 FIXME 3: Local Variable Type Inference - Use var
 
-📌 FIXME_4_: Text blocks
+📌 FIXME 4: Text blocks
 
-📌 FIXME_5_: Switch - Expressions
+📌 FIXME 5: Switch - Expressions
 
-📌 FIXME_6_: Switch - Pattern-matched instanceof
+📌 FIXME 6: Switch - Pattern-matched instanceof
 
-📌 FIXME_7_: Switch - Primitive instance-of switch case (with guards)
+📌 FIXME 7: Switch - Primitive instance-of switch case (with guards)
 
-📌 FIXME_8_: Sealed types
+📌 FIXME 8: Sealed types
 
-📌 FIXME_9_: Records
+📌 FIXME 9: Records
 
-📌 FIXME_10_: Record patterns
+📌 FIXME 10: Record patterns
 
-📌 FIXME_11_: Java 21 benefit
+📌 FIXME 11: Java 21 benefit
 
-📌 FIXME_12_: Statements before super()
+📌 FIXME 12: Statements before super()
 
 📌 JAVA22: JAVA 22 ONLY !!! String Templates
 
