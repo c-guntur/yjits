@@ -211,7 +211,7 @@ public class App {
      */
     static void calculateConferenceDiscount(Conference theConference) {
 
-        double discount = Math.random();
+        double discount = ThreadLocalRandom.current().nextDouble();
         System.out.println("Discount Alert!");
         //FIXME_7_: Switch - Convert to primitive instance-of switch case with guards
         if(discount <= 0.1d){
@@ -311,7 +311,7 @@ public class App {
      * Determine the most voted session in the conference.
      * Uses a random number to pick one from a list of sessions.
      * <p>
-     * NOTE: This method show-cases the getter method signature
+     *  NOTE: This method show-cases the getter method signature
      *   change for Record instances.
      * @param theConference - the current conference
      */

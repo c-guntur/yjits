@@ -218,7 +218,7 @@ public class App {
      * @param theConference
      */
     static void calculateConferenceDiscount(Conference theConference) {
-        double discount = Math.random();
+        double discount = ThreadLocalRandom.current().nextDouble();
         System.out.println("Discount Alert!");
         //FIXED 7: Switch - Convert to primitive instance-of switch case with guards
         switch (discount) {
