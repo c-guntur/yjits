@@ -3,11 +3,11 @@
 ifdef::env-github[]
 ++++
 <p align="center">
-  <img width="800" src="../images/HelpfulNPE.png">
+  <img width="1024" src="../images/HelpfulNPE.png">
 </p>
 ++++
 endif::[]
 
 ifndef::env-github[]
-image::../images/HelpfulNPE.png[Helpful NullPointerException, 800, align=center]
+image::../images/HelpfulNPE.png[Helpful NullPointerException, 1024, align=center]
 endif::[]

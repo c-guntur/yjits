@@ -13,14 +13,14 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <!-- FIXME_0_: Change to the Java 23 -->
+        <!-- FIXME_0_: Change to the Java 24 -->
         <maven.compiler.source>8</maven.compiler.source>
-        <!-- FIXME_0_: Change to the Java 23 -->
+        <!-- FIXME_0_: Change to the Java 24 -->
         <maven.compiler.target>8</maven.compiler.target>
 
         <!-- NOTE: Either use both above or simply use maven.compiler.release -->
         <!--   available since Java 9 -->
-        <!--        <maven.compiler.release>23</maven.compiler.release>-->
+        <!--        <maven.compiler.release>24</maven.compiler.release>-->
     </properties>
 
     <dependencies>
@@ -57,7 +57,7 @@
                     <artifactId>maven-compiler-plugin</artifactId>
                     <version>3.11.0</version>
                     <configuration>
-                        <!-- FIXME_0_: Change to the Java 23 and -->
+                        <!-- FIXME_0_: Change to the Java 24 and -->
                         <!--        uncomment an enable-preview compilerArgs-->
                         <source>8</source>
                         <target>8</target>
@@ -79,7 +79,7 @@
                         <configuration>
                             <toolchains>
                                 <jdk>
-                                    <!-- FIXME_0_: Change to the Java 23 -->
+                                    <!-- FIXME_0_: Change to the Java 24 -->
                                     <version>8</version>
                                 </jdk>
                             </toolchains>
@@ -91,7 +91,7 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
-                    <!-- FIXME_0_: Change to the Java 23 and -->
+                    <!-- FIXME_0_: Change to the Java 24 and -->
                     <!--        uncomment an enable-preview compilerArgs-->
                     <source>8</source>
                     <target>8</target>

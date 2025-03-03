@@ -25,39 +25,32 @@ public class App {
      * <p>
      * NOTE: This method covers the usage of 'var' in Java
      */
-    //FIXED 11: Java 21 benefit
+    //FIXED 11: Java 21+ benefit
     void main() {
-        //FIXED 2: Uncomment/Comment below code.
-        //showNullPointerException();
 
         Conference theConference = new Seeder().seed();
 
-        System.out.println(theConference);
+        displayEmails();
 
+        displayBadgeCount(theConference);
+        displayShirtCount(theConference);
+        displayHatCount(theConference);
+
+        displayPaymentInvoicing(theConference);
+
+        displayDiscountStatement();
+
+        displayRaffleWinners(theConference);
+
+        displayRandomSpotlightSession(theConference);
+    }
+
+    static void displayEmails() {
         System.out.println("\nAttendee email: ");
         System.out.println(ATTENDEE_EMAIL);
         System.out.println();
         System.out.println("Indented Speaker email: ");
         System.out.println(SPEAKER_EMAIL);
-
-        //FIXED 3: Use var instead
-        var shirtCountMap = determineShirtCount(theConference);
-        displayShirtCounts(shirtCountMap);
-
-        //FIXED 3: Use var instead
-        var hatCountMap = determineHatCount(theConference);
-
-        displayHatCounts(hatCountMap);
-
-        displayPaymentInvoicing(theConference);
-
-        calculateConferenceDiscount(theConference);
-
-        displayBadgeCount(theConference);
-
-        displayRaffleWinners(theConference);
-
-        displayRandomWinningSession(theConference);
     }
 
     /**
@@ -82,22 +75,6 @@ public class App {
      */
     static void displayBadgeCount(Conference theConference) {
 
-        //NOTE: String Templates are currently only available in Java 21 & 22
-        //      with enable-preview. String Templates will be revisited in a
-        //      future version of Java.
-        //JAVA22: FMT 'was' a StringTemplate processor that allowed String formatting.
-//        String message = FMT."""
-//        ---------------------------------------------------------------
-//        | Participant type                                   |  Count |
-//        ===============================================================
-//        | %-50s\{Speaker.class.getSimpleName()} | %6d\{theConference.getSpeakers().size()} |
-//        | %-50s\{Attendee.class.getSimpleName()} | %6d\{theConference.getAttendees().size()} |
-//        | %-50s\{Staff.class.getSimpleName()} | %6d\{theConference.getStaff().size()} |
-//        | %-50s\{VendorSponsor.class.getSimpleName()} | %6d\{theConference.getVendorSponsors().size()} |
-//        ===============================================================
-//        | Total allowed people:                              | %6d\{determineBadgeCount(theConference)} |
-//        ---------------------------------------------------------------
-//        """;
         StringBuffer message = new StringBuffer("");
         message.append("\n---------------------------------------------------------------");
         message.append("\n| " + StringUtils.rightPad("Participant type", 50) + " | " + StringUtils.leftPad("Count", 6) + " |");
@@ -111,17 +88,24 @@ public class App {
         message.append("\n---------------------------------------------------------------");
 
         System.out.println(message);
+
+    }
+
+    static void displayShirtCount(Conference theConference) {
+        //FIXED 3: Local Variable Type Inference: Use var instead
+        var shirtCountMap = determineShirtCount(theConference.getSpeakers());
+        displayShirtCount(shirtCountMap);
     }
 
     /**
      * Create a map of shirt sizes to counts per shirt size to be ordered
      *
-     * @param theConference - the current conference
+     * @param speakers - a Set of speakers at the current conference
      * @return - a Map of shirt size to counts per size
      */
-    static Map<String, Integer> determineShirtCount(Conference theConference) {
+    static Map<String, Integer> determineShirtCount(Set<Speaker> speakers) {
         Map<String, Integer> shirtCountMap = new HashMap<>();
-        for (Speaker speaker : theConference.getSpeakers()) {
+        for (Speaker speaker : speakers) {
             String shirtSize = speaker.getShirtSize();
             shirtCountMap.putIfAbsent(shirtSize, ZERO_INTEGER);
             shirtCountMap.compute(shirtSize, (k, currentCount) -> currentCount + 1);
@@ -134,25 +118,22 @@ public class App {
      *
      * @param shirtCountMap - A Map of shirt size to counts per size
      */
-    static void displayShirtCounts(Map<String, Integer> shirtCountMap) {
+    static void displayShirtCount(Map<String, Integer> shirtCountMap) {
         System.out.println("\nTotal number of shirts to order: " +
                 shirtCountMap.values().stream().reduce(0, Integer::sum));
 
         for (String shirtSize : shirtCountMap.keySet()) {
-
             int count = shirtCountMap.get(shirtSize);
-
-            //NOTE: String Templates are currently only available in Java 21 & 22
-            //      with enable-preview. String Templates will be revisited in a
-            //      future version of Java.
             String shirtSizes = "Shirt size: [" + shirtSize + "] " +
                     "-> Count: [" + count + "]";
-            //JAVA22: STR 'was' the most basic StringTemplate processor.
-//            String shirtSizes =
-//                    STR. "Shirt size: [\{ shirtSize }] -> Count: [\{ count }]" ;
-
             System.out.println(shirtSizes);
         }
+    }
+
+    static void displayHatCount(Conference theConference) {
+        //FIXED 3: Local Variable Type Inference: Use var instead?
+        var hatCountMap = determineHatCount(theConference);
+        displayHatCount(hatCountMap);
     }
 
     /**
@@ -176,17 +157,11 @@ public class App {
      *
      * @param hatCountMap - A Map of hat size to counts per size
      */
-    static void displayHatCounts(Map<String, Integer> hatCountMap) {
+    static void displayHatCount(Map<String, Integer> hatCountMap) {
         System.out.println("\nTotal number of hats to order: " +
                 hatCountMap.values().stream().reduce(0, Integer::sum));
 
         for (String hatSize : hatCountMap.keySet()) {
-            //NOTE: String Templates are currently only available in Java 21 & 22
-            //      with enable-preview. String Templates will be revisited in a
-            //      future version of Java.
-            //JAVA22: RAW 'was' a StringTemplate processor that can defer 'process'ing.
-//            StringTemplate message = RAW."Hat size: [\{hatSize}] -> Count: [\{hatCountMap.get(hatSize)}]";
-//            System.out.println(STR.process(message));
             System.out.println("Hat size: [" + hatSize + "] " +
                     "-> Count: [" + hatCountMap.get(hatSize) + "]");
         }
@@ -200,7 +175,13 @@ public class App {
      * @param theConference - the current conference
      */
     static void displayPaymentInvoicing(Conference theConference) {
+        Double processingFee = getProcessingFee(theConference);
+        System.out.println("\nTotal payment-processing fees: USD[" + String.format("%,.2f", processingFee) + "]\n");
+    }
+
+    static double getProcessingFee(Conference theConference) {
         double processingFee = 0.0D;
+
         for (Attendee attendee : theConference.getAttendees()) {
             // FIXED 5: Replace with switch expression
             processingFee += switch (attendee.getPaymentType()) {
@@ -209,26 +190,34 @@ public class App {
                 case PAYPAL -> 0.11D;
             };
         }
-        System.out.println("\nTotal payment-processing fees: USD[" + String.format("%,.2f", processingFee) + "]\n");
+        return processingFee;
+    }
+
+    private static void displayDiscountStatement() {
+        double discount = ThreadLocalRandom.current().nextDouble();
+        System.out.println("You got yourself " +
+                getDiscountAdjective(discount) +
+                " discount");
     }
 
     /**
      * Calculate the discount that every attendee will receive.
      *
-     * @param theConference
+     * @param discount - A primitive value representing the discount percentage
+     * @return a discount adjective to be printed as part of the output
      */
-    static void calculateConferenceDiscount(Conference theConference) {
-        double discount = ThreadLocalRandom.current().nextDouble();
-        System.out.println("Discount Alert!");
+    static String getDiscountAdjective(double discount) {
+        String discountAdjective;
         //FIXED 7: Switch - Convert to primitive instance-of switch case with guards
         switch (discount) {
-            case double d when d <= 0.1d ->
-                System.out.println("Nice! You get yourself a discount");
-            case double d when d <= 0.2d ->
-                System.out.println("Wow!! That is a nice discount");
+            case double d when (d > 0.0d && d <= 0.1d) ->
+                    discountAdjective = "a nice";
+            case double d when (d > 0.1d && d <= 0.2d) ->
+                    discountAdjective = "a great";
             default ->
-                System.out.println("Whoa!!! That is a whopper discount");
+                    discountAdjective = "an interesting";
         }
+        return discountAdjective;
     }
 
     /**
@@ -243,6 +232,14 @@ public class App {
      * @param theConference - the current conference
      */
     static void displayRaffleWinners(Conference theConference) {
+        AllowedPerson[] allowedPersonWinner = selectRaffleWinners(theConference);
+
+        for (AllowedPerson allowedPerson : allowedPersonWinner) {
+            System.out.println(displayRaffleWinnerDetails(allowedPerson));
+        }
+    }
+
+    private static AllowedPerson[] selectRaffleWinners(Conference theConference) {
         List<String> allowedWinnerPool = new ArrayList<>();
 
         allowedWinnerPool.addAll(
@@ -284,50 +281,53 @@ public class App {
                 }
             }
         }
+        return allowedPersonWinner;
+    }
+
+    static String displayRaffleWinnerDetails(AllowedPerson allowedPerson) {
+        String message = "Winner is ";
 
         //FIXED 6: Replace the below with a switch pattern-matched instanceof
-        for (AllowedPerson allowedPerson : allowedPersonWinner) {
-            switch (allowedPerson) {
-                case Attendee attendee -> System.out.println("Winner is an attendee: " +
-                        attendee.getFirstName() + " " + attendee.getLastName() +
-                        ", payment: " + attendee.getPaymentType());
-                case Speaker speaker -> System.out.println("Winner is a speaker: " +
-                        speaker.getFirstName() + " " + speaker.getLastName() +
-                        ", shirt size: " + speaker.getShirtSize());
-                case VendorSponsor vendorSponsor ->
-                        System.out.println("Winner is a vendor/sponsor: " +
-                                vendorSponsor.getFirstName() + " " + vendorSponsor.getLastName() +
-                                ", booth: " + vendorSponsor.getBoothName());
-                default -> throw new IllegalStateException("Person not allowed: " + allowedPerson);
-            }
+        switch (allowedPerson) {
+            case Attendee attendee -> message += "an attendee: " +
+                    attendee.getFirstName() + " " + attendee.getLastName() +
+                    ", payment: " + attendee.getPaymentType();
+            case Speaker speaker -> message += "a speaker: " +
+                    speaker.getFirstName() + " " + speaker.getLastName() +
+                    ", shirt size: " + speaker.getShirtSize();
+            case VendorSponsor vendorSponsor ->
+                    message += "a vendor/sponsor: " +
+                            vendorSponsor.getFirstName() + " " + vendorSponsor.getLastName() +
+                            ", booth: " + vendorSponsor.getBoothName();
+            default -> throw new IllegalStateException("Person not allowed: " + allowedPerson);
         }
-
+        return message;
     }
 
     /**
      * Determine the most voted session in the conference.
      * Uses a random number to pick one from a list of sessions.
      * <p>
-     * NOTE: This method show-cases the getter method signature
+     *  NOTE: This method show-cases the getter method signature
      *   change for Record instances.
      *
      * @param theConference - the current conference
      */
-    static void displayRandomWinningSession(Conference theConference) {
+    static void displayRandomSpotlightSession(Conference theConference) {
         //FIXED 9: Replace to a Record getter and
         //          upgrade to a toList() instead of Collectors.toList()
         List<String> sessions = theConference.getSessions().stream().
                 map(Session::sessionTitle).toList();
 
-        String mostVotedSessionTitle = sessions.get(
+        String spotlightSessionTitle = sessions.get(
                 ThreadLocalRandom.current().nextInt(0, sessions.size()));
 
         //FIXED 9: Replace to a Record getter
-        Optional<Session> sessionObject = theConference.getSessions().stream()
-                .filter(session -> session.sessionTitle().equals(mostVotedSessionTitle))
+        Optional<Session> spotlightSession = theConference.getSessions().stream()
+                .filter(session -> session.sessionTitle().equals(spotlightSessionTitle))
                 .findFirst();
 
-        sessionObject.ifPresent(App::displaySessionDetails);
+        spotlightSession.ifPresent(session -> System.out.println(getSessionDetails(session)));
     }
 
     /**
@@ -340,13 +340,16 @@ public class App {
      * @param object An object that is intended to be a
      *               Session instance
      */
-    static void displaySessionDetails(Object object) {
+    static String getSessionDetails(Object object) {
+        String message = "Sorry, not  valid session!";
+
         //FIXED 10: Use a record pattern
         if (object instanceof Session(String title, String _, Speaker speaker)) {
-            String message = String.format("\nThe most voted session: [%s] by [%s %s]",
+            message = String.format("\nThe most voted session: [%s] by [%s %s]",
                     title, speaker.getFirstName(), speaker.getLastName()) ;
-            System.out.println(message);
+
         }
+        return message;
     }
 
     /**
@@ -358,7 +361,7 @@ public class App {
      * NOTE: This method ONLY exists to highlight
      *       "Helpful NullPointerException"
      */
-    private static void showNullPointerException() {
+    static void showNullPointerException() {
         Conference fakeConference = new Conference(
                 "fake", "fake", Year.now(), "fake");
         Session session = new Session(

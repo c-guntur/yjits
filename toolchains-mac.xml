@@ -7,16 +7,16 @@
             <version>8</version>
         </provides>
         <configuration>
-            <jdkHome>/Library/Java/JavaVirtualMachines/jdk-1.8.jdk/Contents/Home/</jdkHome>
+            <jdkHome>/Library/Java/JavaVirtualMachines/jdk1.8.0_431.jdk/Contents/Home/</jdkHome>
         </configuration>
     </toolchain>
     <toolchain>
         <type>jdk</type>
         <provides>
-            <version>23</version>
+            <version>24</version>
         </provides>
         <configuration>
-            <jdkHome>/Library/Java/JavaVirtualMachines/jdk-23.jdk/Contents/Home/</jdkHome>
+            <jdkHome>/Library/Java/JavaVirtualMachines/jdk-24.jdk/Contents/Home/</jdkHome>
         </configuration>
     </toolchain>
 </toolchains>

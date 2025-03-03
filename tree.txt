@@ -12,7 +12,7 @@
 | | |____HelpfulNPE.adoc
 | | |____HowToSetup.adoc
 | | |____AboutUs.adoc
-|____java23
+|____java24
 | |____pom.xml
 | |____src
 | | |____main

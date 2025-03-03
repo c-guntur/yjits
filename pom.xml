@@ -15,12 +15,12 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.release>23</maven.compiler.release>
+        <maven.compiler.release>24</maven.compiler.release>
     </properties>
 
     <modules>
         <module>java8</module>
-        <module>java23</module>
+        <module>java24</module>
     </modules>
 
     <build>

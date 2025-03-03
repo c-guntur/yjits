@@ -26,5 +26,3 @@ The Agenda:
 
 📌 FIXME 12: Statements before super()
 
-📌 JAVA22: JAVA 22 ONLY !!! String Templates
-
