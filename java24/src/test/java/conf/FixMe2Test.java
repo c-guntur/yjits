@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+//FIXED 2: Fix the JDK to get a helpful NullPointerException message
 class FixMe2Test {
 
     @Test
