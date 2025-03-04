@@ -4,23 +4,23 @@ The Agenda:
 
 📌 FIXME 1: Redundant boxing of primitives
 
-📌 FIXME 2: The new helpful NullPointerException
+📌 FIXME 2: The new helpful NullPointerException - Run Test
 
 📌 FIXME 3: Local Variable Type Inference - Use var
 
-📌 FIXME 4: Text blocks
+📌 FIXME 4: Text blocks - Run Test
 
-📌 FIXME 5: Switch - Expressions
+📌 FIXME 5: Switch - Expressions - Run Test
 
-📌 FIXME 6: Switch - Pattern-matched instanceof
+📌 FIXME 6: Switch - Pattern-matched instanceof - Run Test
 
-📌 FIXME 7: Switch - Primitive instance-of switch case (with guards)
+📌 FIXME 7: Switch - Primitive instance-of switch case (with guards) - Run Test
 
 📌 FIXME 8: Sealed types
 
 📌 FIXME 9: Records
 
-📌 FIXME 10: Record patterns
+📌 FIXME 10: Record patterns - Run Test
 
 📌 FIXME 11: Java 21 benefit
 

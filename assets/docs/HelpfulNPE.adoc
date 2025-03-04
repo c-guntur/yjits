@@ -1,13 +1,23 @@
 == Helpful NullPointerException since Java 14
+:icons: font
 
-ifdef::env-github[]
-++++
-<p align="center">
-  <img width="1024" src="../images/HelpfulNPE.png">
-</p>
-++++
-endif::[]
+=== Before Java 14
 
-ifndef::env-github[]
-image::../images/HelpfulNPE.png[Helpful NullPointerException, 1024, align=center]
-endif::[]
+[source,java,highlight=1..1]
+----
+java.lang.NullPointerException                                       //<1>
+	at conf.App.showNullPointerException(App.java:397)
+	at conf.FixMe2Test.showNullPointerException(FixMe2Test.java:17)
+----
+<1> _**Empty (null) message**_ - no clue what call resulted in the `NullPointerException`.
+
+
+=== Java 14+
+
+[source,java,highlight=1..1]
+----
+java.lang.NullPointerException: Cannot invoke "String.length()" because "conf.Session.mainSpeakerModerator().firstName" is null              //<1>
+	at conf.App.showNullPointerException(App.java:376)
+	at conf.FixMe2Test.showNullPointerException(FixMe2Test.java:18)
+----
+<2> *Helpful message* - we know what call resulted in the `NullPointerException`.

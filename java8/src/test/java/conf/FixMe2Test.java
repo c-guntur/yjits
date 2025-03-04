@@ -17,7 +17,7 @@ class FixMe2Test {
         try {
             App.showNullPointerException();
         } catch (NullPointerException e) {
-            assertTrue(e.getMessage() == null);
+            assertTrue(e.getMessage().contains("firstName"));
         }
     }
 }
