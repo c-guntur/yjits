@@ -50,5 +50,14 @@ public class HelloDevnexus {
 		System.out.println("Hello Devnexus " + year);
 		Speakers speakers = new Speakers("Rodrigo","Chandra");
 		System.out.println(speakers);
+		System.out.println(
+						"\n" +
+								"\n" +
+								"\t\t\\(^_^)/\n" +
+								"\t\t / | \\\n" +
+								"\t\t  | |    \n" +
+								"\t\t_/   \\_\n"
+				);
+
 	}
 }
