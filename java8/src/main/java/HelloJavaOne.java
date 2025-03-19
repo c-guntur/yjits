@@ -32,7 +32,7 @@ class Speakers {
 		return result;
 	}
 
-	//Speakers[speaker1=Rodrigo, speaker2=Chandra]
+	//Speakers[speaker1=Mala, speaker2=Chandra]
 	@Override
 	public String toString() {
 		final StringBuffer sb = new StringBuffer("Speakers[");
@@ -48,16 +48,34 @@ public class HelloJavaOne {
 
 	public static void main(String[] args) {
 		System.out.println("Hello JavaOne " + year);
-		Speakers speakers = new Speakers("Mala","Chandra");
+		Speakers speakers = new Speakers("Mala", "Chandra");
 		System.out.println(speakers);
 		System.out.println(
+				"\n" +
 						"\n" +
-								"\n" +
-								"\t\t\\(^_^)/\n" +
-								"\t\t / | \\\n" +
-								"\t\t  | |    \n" +
-								"\t\t_/   \\_\n"
-				);
+						"\t\t\\(^_^)/\n" +
+						"\t\t / | \\\n" +
+						"\t\t  | |    \n" +
+						"\t\t_/   \\_\n"
+		);
+	}
+}
 
+abstract class Attendee {
+	public Attendee() {
+		System.out.println("Setting discount " + getDiscount());
+	}
+	public abstract double getDiscount();
+}
+
+class Alumni extends Attendee {
+	private double discount;
+	Alumni(double discount) {
+		// this did not compile before Java 23 with preview features enabled.
+		this.discount = discount;
+		super();
+	}
+	@Override public double getDiscount() {
+		return discount * 2;
 	}
 }
