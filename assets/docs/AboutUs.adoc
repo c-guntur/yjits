@@ -1,14 +1,15 @@
 == About the speakers
 :figure-caption!:
 
-image::../images/RG_Mugshot.jpg[Rodrigo Graciano, 150, 150, float="left", align="center"]
+image::../images/MG_Mugshot.jpg[Mala Gupta, 150, 150, float="left", align="center"]
 image::../images/CVG_Mugshot.png[Chandra Guntur, 150, 150, float="right", align="center"]
 
 |===
-^| *Rodrigo Graciano* ^| *Chandra Guntur*
+^| *Mala Gupta* ^| *Chandra Guntur*
+| Developer Advocate @ JetBrains | Sr. Principal Engineer @ Financial Institution
 2+^| *Java Champion*
-2+^| *JUG Leader* link:https://twitter.com/nyjavasig[@NYJavaSIG] and link:https://twitter.com/GardenStateJUG[@GardenStateJUG]
-| *Website*: https://graciano.dev | *Website*: https://cguntur.me
-| *Github*: https://github.com/rodrigolgraciano | *Github*: https://github.com/c-guntur
-| *Twitter*: https://twitter.com/rodrigograciano[@RodrigoGraciano] | *Twitter*: https://twitter.com/cguntur[@CGuntur]
+| *JUG Leader* link:https://twitter.com/DelhiJUG[@DelhiJUG] | *JUG Leader* link:https://twitter.com/nyjavasig[@NYJavaSIG] and link:https://twitter.com/GardenStateJUG[@GardenStateJUG]
+| *Website*: https://malagupta.com | *Website*: https://cguntur.me
+| *Github*: https://github.com/malagupta | *Github*: https://github.com/c-guntur
+| *Twitter*: https://twitter.com/eMalaGupta[@eMalaGupta] | *Twitter*: https://twitter.com/cguntur[@CGuntur]
 |===
