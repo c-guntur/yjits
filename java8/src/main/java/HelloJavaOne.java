@@ -58,28 +58,7 @@ public class HelloJavaOne {
 						"\t\t  | |    \n" +
 						"\t\t_/   \\_\n"
 		);
-
-		Attendee attendee = new Alumni(0.1d);
-		System.out.println(attendee.getDiscount());
 	}
 }
 
-abstract class Attendee {
-	public Attendee() {
-		System.out.println("Setting discount " + getDiscount());
-	}
-	public abstract double getDiscount();
-}
-
-class Alumni extends Attendee {
-	private double discount;
-	Alumni(double discount) {
-		// this did not compile before Java 23 with preview features enabled.
-		this.discount = discount;
-		super();
-	}
-	@Override public double getDiscount() {
-		return discount * 2;
-	}
-}
 
