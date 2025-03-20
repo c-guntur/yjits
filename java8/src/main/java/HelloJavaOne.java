@@ -48,16 +48,8 @@ public class HelloJavaOne {
 
 	public static void main(String[] args) {
 		System.out.println("Hello JavaOne " + year);
-		Speakers speakers = new Speakers("Mala", "Chandra");
-		System.out.println(speakers);
-		System.out.println(
-				"\n" +
-						"\n" +
-						"\t\t\\(^_^)/\n" +
-						"\t\t / | \\\n" +
-						"\t\t  | |    \n" +
-						"\t\t_/   \\_\n"
-		);
+		System.out.println(new Speakers("Mala", "Chandra"));
+		System.out.println("😀😀😀😀😀");
 	}
 }
 
