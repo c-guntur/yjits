@@ -4,29 +4,24 @@ String year = Year.now().toString();
 
 void main() {
 	println("Hello JavaOne " + year);
-	var speakers = new Speakers("Mala", "Chandra");
-	println(speakers);
-	println("""
-			
-					\\(^_^)/        
-					 / | \\              
-					  | |       
-					_/   \\_        
-			""");
+	println(new Speakers("Mala", "Chandra"));
+	println("😀😀😀😀😀");
 }
+
+// Record instead of a data class
+
 // Instance main()
-// 	Class variables don't need to be static to be accessed in main()
-// Unnamed class
+// Unnamed class, implicit class
+
+// Class variables don't need to be static to be accessed in main()
+
+// Use IO.println with import
+// Static methods in java.io.IO are automatic imports
 
 // import module - default import module java.base
-
-// Use var instead of specifying Type twice
-
-// Use IO.println
+// No need to import default available modules
 
 // Terminal => java --enable-preview HelloJavaOne.java
-
-
 
 
 
