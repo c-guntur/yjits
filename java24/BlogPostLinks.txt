@@ -1,0 +1,15 @@
+Java 24 and IntelliJ IDEA: https://blog.jetbrains.com/idea/2025/03/java-24-and-intellij-idea/
+
+Java 24: Build Games, Prototypes, Utilities, and More –With Less Boilerplate: https://blog.jetbrains.com/idea/2025/02/java-24-build-games-prototypes-utilities-and-more-with-less-boilerplate/
+
+Java 24: ‘HelloWorld’ and ‘main()’ meet minimalistic: https://blog.jetbrains.com/idea/2024/02/helloworld-and-main-meet-minimalistic/
+
+Java 23 and IntelliJ IDEA: https://blog.jetbrains.com/idea/2024/09/java-23-and-intellij-idea/
+
+‘JEP Explained’ – a series of interviews on Java 23 features: https://blog.jetbrains.com/idea/2024/09/jep-explained-a-series-of-interviews-on-java-23-features/
+
+Drop the Baggage: Use ‘_’ for Unnamed Local Variables and Patterns in Java 22: https://blog.jetbrains.com/idea/2024/03/drop-the-baggage-use-_-for-unnamed-local-variables-and-patterns-in-java-22/
+
+Constructor Makeover in Java 22: https://blog.jetbrains.com/idea/2024/02/constructor-makeover-in-java-22/
+
+Evolution of the Switch Construct in Java—Why Should you Care?: https://blog.jetbrains.com/idea/2024/01/evolution-of-the-switch-construct-in-java-why-should-you-care/
