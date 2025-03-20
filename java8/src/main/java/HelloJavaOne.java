@@ -58,6 +58,9 @@ public class HelloJavaOne {
 						"\t\t  | |    \n" +
 						"\t\t_/   \\_\n"
 		);
+
+		Attendee attendee = new Alumni(0.1d);
+		System.out.println(attendee.getDiscount());
 	}
 }
 
@@ -79,3 +82,4 @@ class Alumni extends Attendee {
 		return discount * 2;
 	}
 }
+
