@@ -9,8 +9,8 @@ class Alumni extends Attendee {
 	private double discount;
 	Alumni(double discount) {
 		// this did not compile before Java 23 with preview features enabled.
-		super();
 		this.discount = discount;
+		super();
 	}
 	@Override public double getDiscount() {
 		return discount * 2;

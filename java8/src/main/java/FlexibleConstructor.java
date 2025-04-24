@@ -19,5 +19,5 @@ class Alumni extends Attendee {
 
 void main() {
 	Attendee attendee = new Alumni(0.1d);
-	println(attendee.getDiscount());
+	println("Done setting the discount " + attendee.getDiscount());
 }
