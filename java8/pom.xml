@@ -14,9 +14,9 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <!-- FIXME_0_: Change to the Java 24 -->
-        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.source>24</maven.compiler.source>
         <!-- FIXME_0_: Change to the Java 24 -->
-        <maven.compiler.target>8</maven.compiler.target>
+        <maven.compiler.target>24</maven.compiler.target>
 
         <!-- NOTE: Either use both above or simply use maven.compiler.release -->
         <!--   available since Java 9 -->
@@ -59,9 +59,9 @@
                     <configuration>
                         <!-- FIXME_0_: Change to the Java 24 and -->
                         <!--        uncomment an enable-preview compilerArgs-->
-                        <source>8</source>
-                        <target>8</target>
-<!--                        <compilerArgs>&#45;&#45;enable-preview</compilerArgs>-->
+                        <source>24</source>
+                        <target>24</target>
+                        <compilerArgs>--enable-preview</compilerArgs>
                     </configuration>
                 </plugin>
             </plugins>
@@ -80,7 +80,7 @@
                             <toolchains>
                                 <jdk>
                                     <!-- FIXME_0_: Change to the Java 24 -->
-                                    <version>8</version>
+                                    <version>24</version>
                                 </jdk>
                             </toolchains>
                         </configuration>
@@ -93,9 +93,9 @@
                 <configuration>
                     <!-- FIXME_0_: Change to the Java 24 and -->
                     <!--        uncomment an enable-preview compilerArgs-->
-                    <source>8</source>
-                    <target>8</target>
-<!--                    <compilerArgs>&#45;&#45;enable-preview</compilerArgs>-->
+                    <source>24</source>
+                    <target>24</target>
+                    <compilerArgs>--enable-preview</compilerArgs>
                 </configuration>
             </plugin>
         </plugins>

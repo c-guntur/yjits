@@ -43,11 +43,11 @@ class Speakers {
 	}
 }
 
-public class HelloJavaOne {
+public class HelloGIDS {
 	static String year = Year.now().toString();
 
 	public static void main(String[] args) {
-		System.out.println("Hello JavaOne " + year);
+		System.out.println("Hello GIDS " + year);
 		System.out.println(new Speakers("Mala", "Chandra"));
 		System.out.println("😀😀😀😀😀");
 	}
